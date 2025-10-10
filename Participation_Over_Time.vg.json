@@ -91,22 +91,33 @@
       "encoding": {"x": {"datum": {"year": 2020}}}
     },
     {
-      "mark": {"type": "text", "fontStyle": "italic", "align" : "left"},
+      "mark": {
+        "type": "text", 
+        "dx": 5,
+        "fontSize": 11.5, 
+        "fontStyle": "italic", 
+        "align" : "left"
+      },
       "transform": [
         {
+          "filter": {"timeUnit": "year", "field":"Year", "equal": 2020}
+        },
+        {
+          "calculate": "datum.Participants/4",
+          "as": "quart_parts"
+        },
+        { 
           "aggregate": [{
-           "op": "mean",
-           "field": "Participants",
-           "as": "mean_y_axis"
-          }],
-          "groupby": ["Year"]
+            "op": "sum",
+            "field": "quart_parts",
+            "as": "y_value"
+          }]
         }
       ],      
       "encoding": {
-        "text": {"value": "COVID-19 had significant impact on player numbers"},
-        "x": {"field": "Year",
-              "timeUnit":"year"},
-        "y": {"field": "mean_y_axis",
+        "text": {"value": ["COVID-19 had a significant", "impact on player numbers"]},
+        "x": {"datum": {"year": 2020}},
+        "y": {"field": "y_value",
               "type": "quantitative"}     
       }
     }
