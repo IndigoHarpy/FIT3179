@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Sex_Participation.csv"
+  },
+  "width": "container",
+  "mark": {
+    "type": "line",
+    "interpolate": "monotone"
+  },
+  "params": [
+    {
+      "name": "State_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Australian Capital Territory",
+          "New South Wales",
+          "Northern Territory",
+          "Queensland",
+          "South Australia",
+          "Tasmania",
+          "Victoria",
+          "Western Australia"
+        ],
+        "labels": [
+          "Australia",
+          "Australian Capital Territory",
+          "New South Wales",
+          "Northern Territory",
+          "Queensland",
+          "South Australia",
+          "Tasmania",
+          "Victoria",
+          "Western Australia"
+        ],
+        "name": "State Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "State_selection == null || datum.State == State_selection"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "timeUnit": "year",
+      "title":"Year"
+    },
+    "y": {
+      "field": "Participants",
+      "type": "quantitative",
+      "aggregate":"sum",
+      "title": "Total Participants"
+    },
+    "color": {
+      "field": "Sex",
+      "title": "Sex",
+      "legend":{"orient": "bottom"}
+    }
+  },
+  "config": {}
+}
