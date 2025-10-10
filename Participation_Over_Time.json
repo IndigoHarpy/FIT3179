@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "Sex_Participation.csv"
+    "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Sex_Participation.csv"
   },
   "width": "container",
   "mark": {
