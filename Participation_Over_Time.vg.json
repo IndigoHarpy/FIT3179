@@ -16,12 +16,13 @@
     },
     "y": {
       "field": "Participants",
+      "type": "quantitative",
       "title": "Total Participants"
     },
     "color": {
       "field": "Sex",
       "title": "Sex",
-      "legend":{"orient": "none", "legendX":10, "legendY":5}
+      "legend":{"orient": "bottom"}
     }
   },
   "config": {}

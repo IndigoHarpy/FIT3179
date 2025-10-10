@@ -15,7 +15,7 @@
             "lookup": "properties.STE_NAME16",
             "from": {
               "data": {
-                "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_Soccer_Participation.csv"
+                "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Relative_Participation.csv"
               },
               "key": "State",
               "fields": ["Rel_F_Participation"]
@@ -27,7 +27,6 @@
           "color": {
             "field": "Rel_F_Participation",
             "type": "quantitative",
-            "aggregate":"average",
             "title": ["Female Soccer Players", "(per 1000 people)"]
           },
           "tooltip": [
