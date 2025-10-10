@@ -1,0 +1,28 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "Sex_Participation.csv"
+  },
+  "width": "container",
+  "mark": {
+    "type": "line",
+    "interpolate": "monotone"
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "timeUnit": "year",
+      "title":"Year"
+    },
+    "y": {
+      "field": "Participants",
+      "title": "Total Participants"
+    },
+    "color": {
+      "field": "Sex",
+      "title": "Sex",
+      "legend":{"orient": "none", "legendX":10, "legendY":5}
+    }
+  },
+  "config": {}
+}
