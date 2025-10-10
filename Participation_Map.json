@@ -1,8 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Female Participation in Soccer in Australia (2023)",
-  "width": 600,
-  "height": 400,
+  "width": "container",
   "projection": {"type": "conicEqualArea", "rotate": [230, 30, 0], "parallels": [10, 50]},
   "layer": [
     {
