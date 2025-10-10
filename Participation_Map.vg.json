@@ -43,7 +43,7 @@
     },
     "tooltip": [
       {"field": "properties.STE_NAME16", "type": "nominal", "title": "State"},
-      {"field": "Rel_F_Participation", "type": "quantitative", "title": "Females Soccer Players (per 1000 people)"}
+      {"field": "Rel_F_Participation", "type": "quantitative", "title": "Female Soccer Players (per 1000 people)", "format":".2f"}
     ]
   }
     },
