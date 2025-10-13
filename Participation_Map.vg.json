@@ -39,6 +39,7 @@
     "color": {
       "field": "Rel_F_Participation",
       "type": "quantitative",
+      "bin": true,
       "title": ["Female Soccer Players", "(per 1000 people)"]
     },
     "tooltip": [
