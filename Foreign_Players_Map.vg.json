@@ -23,22 +23,22 @@
           "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Country_Data.csv"
         },
         "transform": [{
-            "calculate": "datum.Domestic * datum.Players / 100",
-            "as": "Domestic Players"
+            "calculate": "datum.Foreign * datum.Players / 100",
+            "as": "Foreign Players"
         }],
         "mark": {"type": "circle", "tooltip": {"content": "data"}},
         "encoding": {
           "longitude": {"field": "longitude", "type": "quantitative"},
           "latitude": {"field": "latitude", "type": "quantitative"},
           "size": {
-            "field": "Domestic Players",
+            "field": "Foreign Players",
             "type": "quantitative",
-            "title": "Number of Domestic Players"
+            "title": "Number of Foreign Players"
           },
           "tooltip": [
             {"field": "Country", "type": "nominal"},
-            {"field": "Domestic Players", "type": "quantitative", "format": ","},
-            {"field": "Domestic", "type": "quantitative", "title": "Percentage of Professional Players"}
+            {"field": "Foreign Players", "type": "quantitative", "format": ","},
+            {"field": "Foreign", "type": "quantitative", "title": "Percentage of Professional Players"}
         ]}
       }
     ]
