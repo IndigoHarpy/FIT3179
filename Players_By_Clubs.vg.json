@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "data": {
-    "url": "https://rawgithubusercontent.com/IndigoHarpy/FIT3179/main/Players_Clubs_Country.csv"
+    "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Players_Clubs_Country.csv"
   },
   "params": [
     {
@@ -39,20 +39,20 @@
     },
     {
       "calculate": "datum.Players/datum.Population * 10000",
-      "as": "Soccer Players per 10,000 Population"
+      "as": "Professional Soccer Players per 10,000 Population"
     }
   ],
   "encoding": {
     "x": {
       "field": "Clubs",
       "type": "quantitative",
-      "title": "Number of Professional Clubs",
+      "title": "Professional Clubs",
       "axis": {"tickCount": 7}
     },
     "y": {
       "field": "Players",
       "type": "quantitative",
-      "title": "Number of Professional Players"
+      "title": "Professional Men's Players"
     }
   },
   "layer": [
@@ -94,10 +94,10 @@
         "opacity": {"value": 0.6},
         "tooltip": [
           {"field": "Country", "type": "nominal"},
-          {"field": "Players", "type": "quantitative", "format": ","},
-          {"field": "Clubs", "type": "quantitative", "format": ","},
+          {"field": "Players", "type": "quantitative", "title":"Professional Male Soccer Players", "format": ","},
+          {"field": "Clubs", "type": "quantitative", "title":"Professional Clubs", "format": ","},
           {
-            "field": "Soccer Players per 10,000 Population",
+            "field": "Professional Soccer Players per 10,000 Population",
             "type": "quantitative",
             "format": ".2f"
           }
@@ -118,17 +118,17 @@
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['Country'] == 'Mexico' || datum['Country'] == 'United States' || datum['Country'] == 'Australia' || datum['Country'] == 'Italy' || datum['Country'] == 'Japan' ||  datum['Country'] == 'Germany'",
+            "test": "datum['Country'] == 'Mexico' || datum['Country'] == 'United States' || datum['Country'] == 'Australia' || datum['Country'] == 'Spain' || datum['Country'] == 'Japan' ||  datum['Country'] == 'Brazil'",
             "value": 1
           },
           "value": 0
         },
         "tooltip": [
           {"field": "Country", "type": "nominal"},
-          {"field": "Players", "type": "quantitative", "format": ","},
-          {"field": "Clubs", "type": "quantitative", "format": ","},
+          {"field": "Players", "type": "quantitative", "title":"Professional Male Soccer Players", "format": ","},
+          {"field": "Clubs", "type": "quantitative", "title":"Professional Clubs", "format": ","},
           {
-            "field": "Soccer Players per 10,000 Population",
+            "field": "Professional Soccer Players per 10,000 Population",
             "type": "quantitative",
             "format": ".2f"
           }
