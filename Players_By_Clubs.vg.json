@@ -2,31 +2,138 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "data": {
-    "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Players_Clubs_Country.csv"
+    "url": "https://rawgithubusercontent.com/IndigoHarpy/FIT3179/main/Players_Clubs_Country.csv"
   },
-  "params": [{
-    "name": "view",
-    "select": "interval",
-    "bind": "scales"
-  }],
-  "mark": "circle",
-  "encoding": {
-    "y": {
-      "field": "Players",
-      "type": "quantitative"
-    },
-    "x": {
-      "field": "Clubs",
-      "type": "quantitative"
-    },
-    "size": {"field": "Population", "type": "quantitative"},
-    "color": {
-      "field": "Continent", 
-      "type": "nominal", 
-      "scale": {
-        "domain":["North America", "South America", "Europe", "Africa", "Asia", "Oceania"], 
-        "range": ["#e41a1c", "#984ea3", "#ff7f00", "#a6cee3", "#377eb8", "#a65628"]
+  "params": [
+    {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "labels": [
+          "Show All",
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Continent Selection: "
       }
     }
-  }
+  ],
+  "transform": [
+    {"filter": "datum.Clubs > 0"},
+    {"filter": "datum.Players > 0"},
+    {
+      "filter": "Continent_selection == null || datum.Continent == Continent_selection"
+    },
+    {
+      "calculate": "datum.Players/datum.Population * 10000",
+      "as": "Soccer Players per 10,000 Population"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Clubs",
+      "type": "quantitative",
+      "title": "Number of Professional Clubs",
+      "axis": {"tickCount": 7}
+    },
+    "y": {
+      "field": "Players",
+      "type": "quantitative",
+      "title": "Number of Professional Players"
+    }
+  },
+  "layer": [
+    {
+      "mark": "circle",
+      "encoding": {
+        "size": {
+          "field": "Population",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
+            "range": [10, 50, 150, 200, 300, 400]
+          },
+          "legend": {"format": ".1s"}
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "North America",
+              "South America",
+              "Europe",
+              "Africa",
+              "Asia",
+              "Oceania"
+            ],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00",
+              "#a6cee3",
+              "#377eb8",
+              "#a65628"
+            ]
+          }
+        },
+        "opacity": {"value": 0.6},
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Players", "type": "quantitative", "format": ","},
+          {"field": "Clubs", "type": "quantitative", "format": ","},
+          {
+            "field": "Soccer Players per 10,000 Population",
+            "type": "quantitative",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Country'] == 'Mexico' || datum['Country'] == 'United States' || datum['Country'] == 'Australia' || datum['Country'] == 'Italy' || datum['Country'] == 'Japan' ||  datum['Country'] == 'Germany'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Players", "type": "quantitative", "format": ","},
+          {"field": "Clubs", "type": "quantitative", "format": ","},
+          {
+            "field": "Soccer Players per 10,000 Population",
+            "type": "quantitative",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ]
 }

@@ -1,124 +1,124 @@
-country,Clubs,Domestic,Foreign,Players
-Afghanistan,12,,,
-Albania,22,65,35,869
-Algeria,32,96,4,549
-Andorra,,16,84,170
-Angola,16,94,6,550
-Argentina,118,88,12,3613
-Armenia,25,70,30,637
-Australia,12,75,25,1597
-Austria,28,63,37,814
-Azerbaijan,20,64,36,630
-Bangladesh,11,80,20,368
-Belarus,32,91,9,1534
-Belgium,32,59,41,1491
-Belize,,85,15,260
-Bolivia,17,77,23,563
-Bosnia and Herzegovina,12,70,30,387
-Botswana,16,95,5,400
-Brazil,124,87,13,2123
-Bulgaria,34,70,30,711
-Cambodia,20,90,10,614
-Cameroon,35,,,
-Canada,8,68,32,189
-Chile,46,72,28,1350
-China,48,84,16,1586
-Colombia,36,91,9,1163
-Costa Rica,30,90,10,818
-Croatia,38,69,31,1188
-Cyprus,14,39,61,511
-Denmark,24,61,39,673
-Ecuador,26,77,23,897
-Egypt,18,84,16,642
-El Salvador,68,84,16,1700
-Estonia,10,81,19,347
-Ethiopia,16,91,9,517
-Fiji,10,95,5,307
-Finland,12,69,31,311
-France,38,40,60,2906
-Gabon,24,,,
-Georgia,20,78,22,533
-Germany,56,47,53,1562
-Ghana,18,96,4,704
-Greece,39,70,30,1086
-Guatemala,72,85,15,945
-Haiti,,98,2,720
-Honduras,10,88,12,328
-Hong Kong,11,74,26,288
-Hungary,30,70,30,1055
-Iceland,12,87,13,330
-India,43,77,23,1506
-Indonesia,46,87,13,1431
-Iran,16,99,1,1800
-Iraq,20,,,
-Ireland,10,75,25,326
-Israel,30,74,26,818
-Italy,100,34,66,3101
-Jamaica,10,97,3,447
-Japan,60,88,12,2126
-Jordan,12,,,
-Kazakhstan,50,85,15,1195
-Kenya,18,,,
-Kuwait,15,81,19,451
-Latvia,10,64,36,200
-Liechtenstein,,20,80,25
-Lithuania,10,57,43,288
-Malaysia,14,85,15,782
-Mali,16,,,
-Malta,30,58,42,530
-Mauritius,10,,,
-Mexico,301,70,30,9464
-Moldova,8,61,39,180
-Mongolia,10,94,6,264
-Montenegro,10,85,15,296
-Morocco,32,,,
-Mozambique,12,85,15,360
-Myanmar,12,,,
-Namibia,16,,,
-Netherlands,38,61,39,1150
-Nicaragua,10,82,18,263
-Norway,32,74,26,420
-Oman,36,65,35,531
-Palestine,12,95,5,207
-Panama,12,88,12,396
-Papua New Guinea,28,,,
-Paraguay,12,82,18,662
-Peru,33,79,21,555
-Philippines,7,75,25,136
-Poland,54,62,38,1710
-Portugal,36,52,48,2074
-Puerto Rico,6,,,
-Qatar,12,79,21,430
-Romania,36,65,35,531
-Russia,54,93,7,3633
-Saudi Arabia,36,70,30,1505
-Senegal,28,,,
-Serbia,32,80,20,972
-Singapore,9,70,30,220
-Slovakia,28,67,33,907
-Slovenia,10,58,42,271
-Somalia,16,,,
-South Africa,16,83,17,541
-South Korea,25,87,13,780
-Spain,42,59,41,8560
-Suriname,10,,,
-Sweden,32,,,
-Switzerland,22,66,34,1140
-Syria,12,,,
-Tajikistan,10,77,23,227
-Tanzania,16,,,
-Thailand,110,75,25,1338
-Tunisia,40,,,
-Turkey,76,91,9,3917
-Turkmenistan,8,,,
-Uganda,31,96,4,991
-Ukraine,42,87,13,1288
-United Arab Emirates,14,68,32,530
-United Kingdom,92,34,66,5582
-United States,103,49,51,2791
-Uruguay,30,90,10,516
-Uzbekistan,25,83,17,611
-Venezuela,31,88,12,505
-Vietnam,24,88,12,770
-Zambia,18,,,
-Zimbabwe,18,,,
+Country,Clubs,Domestic,Foreign,Players,Continent,Population
+Afghanistan,12,,,,Asia,43844111
+Albania,22,65,35,869,Europe,2771508
+Algeria,32,96,4,549,Africa,47435312
+Andorra,,16,84,170,Europe,82904
+Angola,16,94,6,550,Africa,39040039
+Argentina,118,88,12,3613,South America,45851378
+Armenia,25,70,30,637,Asia,2952365
+Australia,12,75,25,1597,Oceania,26974026
+Austria,28,63,37,814,Europe,9113574
+Azerbaijan,20,64,36,630,Asia,10397713
+Bangladesh,11,80,20,368,Asia,175686899
+Belarus,32,91,9,1534,Europe,8997603
+Belgium,32,59,41,1491,Europe,11758603
+Belize,,85,15,260,North America,422924
+Bolivia,17,77,23,563,South America,12581843
+Bosnia and Herzegovina,12,70,30,387,Europe,3140095
+Botswana,16,95,5,400,Africa,2562122
+Brazil,124,87,13,2123,South America,212812405
+Bulgaria,34,70,30,711,Europe,6714560
+Cambodia,20,90,10,614,Asia,17847982
+Cameroon,35,,,,Africa,29879337
+Canada,8,68,32,189,North America,40126723
+Chile,46,72,28,1350,South America,19859921
+China,48,84,16,1586,Asia,1416096094
+Colombia,36,91,9,1163,South America,53425635
+Costa Rica,30,90,10,818,North America,5152950
+Croatia,38,69,31,1188,Europe,3848160
+Cyprus,14,39,61,511,Europe,1370754
+Denmark,24,61,39,673,Europe,6002507
+Ecuador,26,77,23,897,South America,18289896
+Egypt,18,84,16,642,Africa,118365995
+El Salvador,68,84,16,1700,North America,6365503
+Estonia,10,81,19,347,Europe,1344232
+Ethiopia,16,91,9,517,Africa,135472051
+Fiji,10,95,5,307,Oceania,933154
+Finland,12,69,31,311,Europe,5623329
+France,38,40,60,2906,Europe,66650804
+Gabon,24,,,,Africa,2593130
+Georgia,20,78,22,533,Asia,3806671
+Germany,56,47,53,1562,Europe,84075075
+Ghana,18,96,4,704,Africa,35064272
+Greece,39,70,30,1086,Europe,9938844
+Guatemala,72,85,15,945,North America,18687881
+Haiti,,98,2,720,North America,11906095
+Honduras,10,88,12,328,North America,11005850
+Hong Kong,11,74,26,288,Asia,7396076
+Hungary,30,70,30,1055,Europe,9632287
+Iceland,12,87,13,330,Europe,398266
+India,43,77,23,1506,Asia,1463865525
+Indonesia,46,87,13,1431,Asia,285721236
+Iran,16,99,1,1800,Asia,92417681
+Iraq,20,,,,Asia,47020774
+Ireland,10,75,25,326,Europe,5308039
+Israel,30,74,26,818,Asia,9517181
+Italy,100,34,66,3101,Europe,59146260
+Jamaica,10,97,3,447,North America,2837077
+Japan,60,88,12,2126,Asia,123103479
+Jordan,12,,,,Asia,11520684
+Kazakhstan,50,85,15,1195,Asia,20843754
+Kenya,18,,,,Africa,57532493
+Kuwait,15,81,19,451,Asia,5026078
+Latvia,10,64,36,200,Europe,1853559
+Liechtenstein,,20,80,25,Europe,40128
+Lithuania,10,57,43,288,Europe,2830144
+Malaysia,14,85,15,782,Asia,35977838
+Mali,16,,,,Africa,25198821
+Malta,30,58,42,530,Europe,545405
+Mauritius,10,,,,Africa,1268280
+Mexico,301,70,30,9464,North America,131946900
+Moldova,8,61,39,180,Europe,2996106
+Mongolia,10,94,6,264,Asia,3517100
+Montenegro,10,85,15,296,Europe,632729
+Morocco,32,,,,Africa,38430770
+Mozambique,12,85,15,360,Africa,35631653
+Myanmar,12,,,,Asia,54850648
+Namibia,16,,,,Africa,3092816
+Netherlands,38,61,39,1150,Europe,18346819
+Nicaragua,10,82,18,263,North America,7007502
+Norway,32,74,26,420,Europe,5623071
+Oman,36,65,35,531,Asia,5494691
+Palestine,12,95,5,207,Asia,5589623
+Panama,12,88,12,396,North America,4571189
+Papua New Guinea,28,,,,Oceania,10762817
+Paraguay,12,82,18,662,South America,7013078
+Peru,33,79,21,555,South America,34576665
+Philippines,7,75,25,136,Asia,116786962
+Poland,54,62,38,1710,Europe,38140910
+Portugal,36,52,48,2074,Europe,10411834
+Puerto Rico,6,,,,North America,3235289
+Qatar,12,79,21,430,Asia,3115889
+Romania,36,65,35,531,Europe,18908650
+Russia,54,93,7,3633,Asia,143997393
+Saudi Arabia,36,70,30,1505,Asia,34556328
+Senegal,28,,,,Africa,18931966
+Serbia,32,80,20,972,Europe,6689039
+Singapore,9,70,30,220,Asia,5870750
+Slovakia,28,67,33,907,Europe,5474881
+Slovenia,10,58,42,271,Europe,2117072
+Somalia,16,,,,Africa,19654739
+South Africa,16,83,17,541,Africa,64747319
+South Korea,25,87,13,780,Asia,51667029
+Spain,42,59,41,8560,Europe,47889958
+Suriname,10,,,,South America,639850
+Sweden,32,,,,Europe,10656633
+Switzerland,22,66,34,1140,Europe,8967407
+Syria,12,,,,Asia,25620427
+Tajikistan,10,77,23,227,Asia,10786734
+Tanzania,16,,,,Africa,70545865
+Thailand,110,75,25,1338,Asia,71619863
+Tunisia,40,,,,Africa,12348573
+Turkey,76,91,9,3917,Asia,87685426
+Turkmenistan,8,,,,Asia,7618847
+Uganda,31,96,4,991,Africa,51384894
+Ukraine,42,87,13,1288,Europe,38980376
+United Arab Emirates,14,68,32,530,Asia,11346000
+United Kingdom,92,34,66,5582,Europe,69551332
+United States,103,49,51,2791,North America,347275807
+Uruguay,30,90,10,516,South America,3384688
+Uzbekistan,25,83,17,611,Asia,37053428
+Venezuela,31,88,12,505,South America,28516896
+Vietnam,24,88,12,770,Asia,101598527
+Zambia,18,,,,Africa,21913874
+Zimbabwe,18,,,,Africa,16950795
