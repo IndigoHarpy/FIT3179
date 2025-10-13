@@ -1,0 +1,125 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Sex_Participation.csv"
+  },
+  "width": "container",
+  "params": [
+    {
+      "name": "State_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Australian Capital Territory",
+          "New South Wales",
+          "Northern Territory",
+          "Queensland",
+          "South Australia",
+          "Tasmania",
+          "Victoria",
+          "Western Australia"
+        ],
+        "labels": [
+          "Australia",
+          "Australian Capital Territory",
+          "New South Wales",
+          "Northern Territory",
+          "Queensland",
+          "South Australia",
+          "Tasmania",
+          "Victoria",
+          "Western Australia"
+        ],
+        "name": "State Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "State_selection == null || datum.State == State_selection"
+    }
+  ],
+  "layer":[
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "timeUnit": "year",
+          "title":"Year"
+        },
+        "y": {
+          "field": "Participants",
+          "type": "quantitative",
+          "aggregate":"sum",
+          "title": "Number of Soccer Players"
+        },
+        "color": {
+          "field": "Sex",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Male",
+              "Female",
+              "Total"
+            ],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00"
+            ]
+          },
+          "legend":{"orient": "bottom"}         
+        },
+        "tooltip": [
+          {"field": "Year", "timeUnit": "year", "title": "Year"},
+          {"field": "Sex", "type": "ordinal", "title": "Soccer Player Sex"},
+          {
+            "field": "Participants", 
+            "type": "quantitative", 
+            "aggregate":"sum", 
+            "title": "Number of Players", 
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "data": {"values": [{}]},
+      "mark": {"type": "rule", "strokeDash": [2, 2], "size": 2},
+      "encoding": {"x": {"datum": {"year": 2020}}}
+    },
+    {
+      "mark": {
+        "type": "text", 
+        "dx": 5,
+        "fontSize": 11.5, 
+        "fontStyle": "italic", 
+        "align" : "left"
+      },
+      "transform": [
+        {
+          "filter": {"timeUnit": "year", "field":"Year", "equal": 2020}
+        },
+        {
+          "calculate": "datum.Participants/4",
+          "as": "quart_parts"
+        },
+        { 
+          "aggregate": [{
+            "op": "sum",
+            "field": "quart_parts",
+            "as": "y_value"
+          }]
+        }
+      ],      
+      "encoding": {
+        "text": {"value": ["COVID-19 had a significant", "impact on player numbers"]},
+        "x": {"datum": {"year": 2020}},
+        "y": {"field": "y_value",
+              "type": "quantitative"}     
+      }
+    }
+  ]
+}

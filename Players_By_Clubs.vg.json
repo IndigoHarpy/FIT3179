@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "data": {
+    "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Players_Clubs_Country.csv"
+  },
+  "params": [{
+    "name": "view",
+    "select": "interval",
+    "bind": "scales"
+  }],
+  "mark": "circle",
+  "encoding": {
+    "y": {
+      "field": "Players",
+      "type": "quantitative"
+    },
+    "x": {
+      "field": "Clubs",
+      "type": "quantitative"
+    },
+    "size": {"field": "Population", "type": "quantitative"},
+    "color": {
+      "field": "Continent", 
+      "type": "nominal", 
+      "scale": {
+        "domain":["North America", "South America", "Europe", "Africa", "Asia", "Oceania"], 
+        "range": ["#e41a1c", "#984ea3", "#ff7f00", "#a6cee3", "#377eb8", "#a65628"]
+      }
+    }
+  }
+}
