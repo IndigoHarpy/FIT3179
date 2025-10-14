@@ -3,8 +3,8 @@
     "repeat": ["Outdoor", "Outdoor_F", "Futsal", "Futsal_F", "Social", "Social_F"],
     "columns": 2,
     "spec":{
-        "width": 400,
-        "height": 250,
+        "width": 250,
+        "height": 150,
         "layer": [{
             "data": {
                 "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_Soccer_Participation.csv"
