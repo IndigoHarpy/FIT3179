@@ -50,7 +50,7 @@
                 "legend":{"orient": "bottom"}         
                 },
                 "tooltip": [
-                {"field": "Year", "timeUnit": "year"},
+                {"field": "Year", "timeUnit": "year", "title": "Year"},
                 {"field": "State", "type": "nominal"},
                 {
                     "field": {"repeat": "repeat"}, 
