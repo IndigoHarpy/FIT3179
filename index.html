@@ -26,15 +26,13 @@
 
 <body>
 
-  <div class="page">
-
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h1>Women in Soccer</h1>
-      </div>
+  <div id = "visualisation">
+    <!-- Title -->
+    <div class="pure-g" id = "banner">
+        <div class="pure-u-1">
+            <h1 class="title">Women in Soccer</h1>
+        </div>
     </div>
-    <!-- end pure grid group -->
 
     <!-- pure grid group -->
     <div class="pure-g">
@@ -80,18 +78,18 @@
   </div> <!-- end page -->
 
   <script type="text/javascript">
+    const worldBtn = document.getElementById("World");
+    const EurBtn = document.getElementById("Europe");
     var specVis1 = "./Participation_Map.vg.json";
     var specVis2 = "./Participation_Over_Time.vg.json";
-    var specVis3 = "./Domestic_Players_Map.vg.json";
-    var specVis4 = "./Foreign_Players_Map.vg.json";
+    var specVis3 = "./World_Players_Map.vg.json";
+    var specVis4 = "./Europe_Players_Map.vg.json";
     var specVis5 = "./Players_By_Clubs.vg.json";
     var specVis6 = "./Player_Sports.vg.json";
 
     vegaEmbed('#vis1', specVis1, { "actions": false });
 
-    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
+    vegaEmbed('#vis2', specVis2, { "actions": false });
 
     vegaEmbed('#vis3', specVis3, { "actions": false });
 
@@ -100,6 +98,14 @@
     vegaEmbed('#vis5', specVis5, { "actions": false });
 
     vegaEmbed('#vis6', specVis6, { "actions": false });
+
+    function showMap() {
+            if(worldBtn.checked) {
+                vegaEmbed('#vis3-4', specVis3, {actions: false})
+            } else if(EurBtn.checked) {
+                vegaEmbed('#vis3-4', specVis4, {actions: false})
+            }
+        }
   </script>
 </body>
 
