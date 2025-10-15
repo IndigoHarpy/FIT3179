@@ -17,43 +17,37 @@
   "layer": [
     {
       "data": {
-    "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Relative_Participation.csv"
-  },
-  "transform": [
-    {
-      "lookup": "State",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_states.topojson",
-          "format": {"type": "topojson", "feature": "STE_2016_AUST"}
+        "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Relative_Participation.csv"
+      },
+      "transform": [
+        {
+          "lookup": "State",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_states.topojson",
+              "format": {"type": "topojson", "feature": "STE_2016_AUST"}
+            },
+            "key": "properties.STE_NAME16",
+            "fields": ["properties", "type", "geometry"]
+          }
         },
-        "key": "properties.STE_NAME16",
-        "fields": ["properties", "type", "geometry"]
+        {"filter": "datum.Year == Year"}
+      ],
+      "projection": {"type": "conicEqualArea", "rotate": [230, 30, 0], "parallels": [10, 50]},
+      "mark": {"type": "geoshape", "stroke": "black"},
+      "encoding": {
+        "color": {
+          "field": "Rel_F_Participation",
+          "type": "quantitative",
+          "bin": true,
+          "scale": {"scheme": "reds"},
+          "title": ["Female Soccer Players", "(per 1000 people)"]
+        },
+        "tooltip": [
+          {"field": "properties.STE_NAME16", "type": "nominal", "title": "State"},
+          {"field": "Rel_F_Participation", "type": "quantitative", "title": "Female Soccer Players (per 1000 people)", "format":".2f"}
+        ]
       }
-    },
-    {"filter": "datum.Year == Year"}
-  ],
-  "projection": {"type": "conicEqualArea", "rotate": [230, 30, 0], "parallels": [10, 50]},
-  "mark": {"type": "geoshape", "stroke": "black"},
-  "encoding": {
-    "color": {
-      "field": "Rel_F_Participation",
-      "type": "quantitative",
-      "bin": true,
-      "title": ["Female Soccer Players", "(per 1000 people)"]
-    },
-    "tooltip": [
-      {"field": "properties.STE_NAME16", "type": "nominal", "title": "State"},
-      {"field": "Rel_F_Participation", "type": "quantitative", "title": "Female Soccer Players (per 1000 people)", "format":".2f"}
-    ]
-  }
-    },
-    {
-      "data": {
-          "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_states.topojson",
-          "format": {"type": "topojson", "feature": "ne_110m_graticules_10"}
-        },
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "lightgray"}
     }
   ]
 }
