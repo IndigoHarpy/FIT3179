@@ -140,7 +140,9 @@
             "field": "Proportion_F",
             "type": "quantitative",
             "bin": true,
-            "scale": {"scheme": "greens"},
+            "scale": {
+                "domain": [0, 5, 10, 15, 20], 
+                "range": ["#7AB37A", "#4C854C", "#385F38", "#284027"]},
             "title": "Female Players (%)"
             },
             "opacity": {
