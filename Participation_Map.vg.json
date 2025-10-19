@@ -17,7 +17,7 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Relative_Participation.csv"
+        "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_Soccer_Participation.csv"
       },
       "transform": [
         {
@@ -31,21 +31,25 @@
             "fields": ["properties", "type", "geometry"]
           }
         },
-        {"filter": "datum.Year == Year"}
+        {"filter": "datum.Year == Year"},
+        {
+          "calculate": "datum.F_Participants/datum.Participants * 100",
+          "as": "Proportion_F"
+        }
       ],
       "projection": {"type": "conicEqualArea", "rotate": [230, 30, 0], "parallels": [10, 50]},
       "mark": {"type": "geoshape", "stroke": "black"},
       "encoding": {
         "color": {
-          "field": "Rel_F_Participation",
+          "field": "Proportion_F",
           "type": "quantitative",
           "bin": true,
-          "scale": {"scheme": "reds"},
-          "title": ["Female Soccer Players", "(per 1000 people)"]
+          "scale": {"scheme": "greens"},
+          "title": ["Female Percentage of Players"]
         },
         "tooltip": [
           {"field": "properties.STE_NAME16", "type": "nominal", "title": "State"},
-          {"field": "Rel_F_Participation", "type": "quantitative", "title": "Female Soccer Players (per 1000 people)", "format":".2f"}
+          {"field": "Proportion_F", "type": "quantitative", "title": "Female Percentage of Players", "format":".2f"}
         ]
       }
     }
