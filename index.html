@@ -21,7 +21,6 @@
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
-
 </head>
 
 <body>
@@ -30,17 +29,23 @@
     <!-- Title -->
     <div class="pure-g" id = "banner">
         <div class="pure-u-1">
-            <h1 class="title">Women in Soccer</h1>
+            <h1 class="title">Australian Soccer</h1>
         </div>
     </div>
 
     <!-- pure grid group -->
     <div class="pure-g">
-      <div class="pure-u-1-2">
-        <div id="vis2" class="vis-container"></div>
+      <div class="pure-u-1-3 central" style="border-left: 1px solid; box-sizing: border-box;">
+        <div class="body_text" id="body_text1">
+          <h1 style="text-align: center;">Participation</h1>
+
+          <p>text text text text text text text text text text text text text text text text 
+            text text text text text text text text text text text text text text text text 
+            text text text text text text text text text text text text text text text text 
+          </p>
       </div>
-      <div class="pure-u-1-2">
-        <div id="vis1" class="vis-container"></div>
+      <div class="pure-u-2-3 central">
+        <div id="vis1" class="vis-container" style="width: 95%; box-sizing: border-box;"></div>
       </div>
     </div>
     <!-- end pure grid group -->
@@ -48,7 +53,7 @@
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <div id="vis3" class="vis-container"></div>
+        <body> text </body>
       </div>
       <div class="pure-u-1-2">
         <div id="vis4" class="vis-container"></div>
@@ -78,14 +83,17 @@
   </div> <!-- end page -->
 
   <script type="text/javascript">
+    const maleBtn = document.getElementById("Male");
+    const femaleBtn = document.getElementById("Female");
     const worldBtn = document.getElementById("World");
     const EurBtn = document.getElementById("Europe");
     var specVis1 = "./Participation_Map.vg.json";
-    var specVis2 = "./Participation_Over_Time.vg.json";
-    var specVis3 = "./World_Players_Map.vg.json";
-    var specVis4 = "./Europe_Players_Map.vg.json";
-    var specVis5 = "./Players_By_Clubs.vg.json";
-    var specVis6 = "./Player_Sports.vg.json";
+    var specVis2 = "./Participation_Map_F.vg.json";
+    var specVis = "./Participation_Over_Time.vg.json";
+    var specVis = "./World_Players_Map.vg.json";
+    var specVis = "./Europe_Players_Map.vg.json";
+    var specVis = "./Players_By_Clubs.vg.json";
+    var specVis = "./Player_Sports.vg.json";
 
     vegaEmbed('#vis1', specVis1, { "actions": false });
 
@@ -99,13 +107,21 @@
 
     vegaEmbed('#vis6', specVis6, { "actions": false });
 
+    function partMap() {
+      if(maleBtn.checked) {
+          vegaEmbed('#vis1-2', specVis1, {actions: false})
+      } else if(femaleBtn.checked) {
+          vegaEmbed('#vis1-2', specVis2, {actions: false})
+      }
+    } 
+
     function showMap() {
-            if(worldBtn.checked) {
-                vegaEmbed('#vis3-4', specVis3, {actions: false})
-            } else if(EurBtn.checked) {
-                vegaEmbed('#vis3-4', specVis4, {actions: false})
-            }
-        }
+      if(worldBtn.checked) {
+          vegaEmbed('#vis3-4', specVis3, {actions: false})
+      } else if(EurBtn.checked) {
+          vegaEmbed('#vis3-4', specVis4, {actions: false})
+      }
+    }
   </script>
 </body>
 
