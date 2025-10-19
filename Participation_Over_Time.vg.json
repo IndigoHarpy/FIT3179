@@ -115,7 +115,7 @@
         }
       ],      
       "encoding": {
-        "text": {"value": ["COVID-19 had a significant", "impact on player numbers"]},
+        "text": {"value": ["COVID-19"]},
         "x": {"datum": {"year": 2020}},
         "y": {"field": "y_value",
               "type": "quantitative"}     

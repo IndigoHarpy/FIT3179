@@ -33,13 +33,13 @@
         </div>
     </div>
 
-    <!-- pure grid group -->
+    <!-- Section 1 -->
     <div class="pure-g">
       <div class="pure-u-1-3 central">
         <div class="body_text" id="body_text2">
           <h1 style="text-align: center;">Participation</h1>
-
-          <p>text text text text text text text text text text text text text text text text 
+          <p>
+            text text text text text text text text text text text text text text text text 
             text text text text text text text text text text text text text text text text 
             text text text text text text text text text text text text text text text text 
           </p>
@@ -49,9 +49,9 @@
         <div id="vis1" class="vis-container" style="width: 95%; padding-left: 5px;"></div>
       </div>
     </div>
-    <!-- end pure grid group -->
+    <!-- End Section 1 -->
 
-    <!-- pure grid group -->
+    <!-- Section 2 -->
     <div class="pure-g">
       <div class="pure-u-2-3">
         <div id="vis2" class="vis-container"></div>
@@ -59,48 +59,72 @@
       <div class="pure-u-1-3">
         <div class="body_text" id="body_text1">
           <h1 style="text-align: center;">Types of Soccer</h1>
-
-          <p>text text text text text text text text text text text text text text text text 
+          <p>
+            text text text text text text text text text text text text text text text text 
             text text text text text text text text text text text text text text text text 
             text text text text text text text text text text text text text text text text 
           </p>
         </div>
       </div>
     </div>
-    <!-- end pure grid group -->
+    <!-- End Section 2 -->
 
-    <!-- pure grid group -->
+<!-- Section 3 -->
+    <div class="pure-g">
+      <div class="pure-u-1-3 central">
+        <div class="body_text" id="body_text2">
+          <h1 style="text-align: center;">Professional Players</h1>
+          <p>
+            text text text text text text text text text text text text text text text text 
+            text text text text text text text text text text text text text text text text 
+            text text text text text text text text text text text text text text text text 
+          </p>
+        </div>
+      </div>
+      <div class="pure-u-2-3 central" style="border-left: 1px solid; box-sizing: border-box;">
+        <div id="vis3" class="vis-container" style="width: 95%; padding-left: 5px;"></div>
+      </div>
+    </div>
+    <!-- End Section 3 -->
+
+    <!-- Section 4 -->
     <div class="pure-g">
       <div class="pure-u-2-3">
-        <div id="vis5" class="vis-container"></div>
+        <div id="vis2" class="vis-container"></div>
       </div>
       <div class="pure-u-1-3">
-        <body"> text text text </body>
-      </div>
-    </div>
-    <!-- end pure grid group -->
+        <div class="body_text" id="body_text1">
+          <h1 style="text-align: center;">Types of Soccer</h1>
+          <p>
+            text text text text text text text text text text text text text text text text 
+            text text text text text text text text text text text text text text text text 
+            text text text text text text text text text text text text text text text text 
+          </p>
 
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div id="vis6" class="vis-container"></div>
+          <div style="padding-bottom: 10px;">
+            <input type="radio" id="World" name="map" checked onclick="showMap();">
+            <label for="World"><span class="btext">World Map</span></label>
+          </div>
+
+          <div>
+            <input type="radio" id="Europe" name="map" onclick="showMap();">
+            <label for="Europe"><span class="btext">Europe Map</span></label>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- end pure grid group -->
+    <!-- End Section 4 -->
 
   </div> <!-- end page -->
 
   <script type="text/javascript">
-    const maleBtn = document.getElementById("Male");
-    const femaleBtn = document.getElementById("Female");
     const worldBtn = document.getElementById("World");
     const EurBtn = document.getElementById("Europe");
     var specVis1 = "./Participation_Map.vg.json";
     var specVis2 = "./Player_Sports.vg.json";
-    var specVis = "./Participation_Over_Time.vg.json";
-    var specVis = "./World_Players_Map.vg.json";
-    var specVis = "./Europe_Players_Map.vg.json";
-    var specVis = "./Players_By_Clubs.vg.json";
+    var specVis3 = "./Players_By_Clubs.vg.json";
+    var specVis4 = "./World_Players_Map.vg.json";
+    var specVis5 = "./Europe_Players_Map.vg.json";
 
     vegaEmbed('#vis1', specVis1, { "actions": false });
 
@@ -108,25 +132,13 @@
 
     vegaEmbed('#vis3', specVis3, { "actions": false });
 
-    vegaEmbed('#vis4', specVis4, { "actions": false });
-
-    vegaEmbed('#vis5', specVis5, { "actions": false });
-
-    vegaEmbed('#vis6', specVis6, { "actions": false });
-
-    function partMap() {
-      if(maleBtn.checked) {
-          vegaEmbed('#vis1-2', specVis1, {actions: false})
-      } else if(femaleBtn.checked) {
-          vegaEmbed('#vis1-2', specVis2, {actions: false})
-      }
-    } 
+    vegaEmbed('#vis4-5', specVis4, { "actions": false });
 
     function showMap() {
       if(worldBtn.checked) {
-          vegaEmbed('#vis3-4', specVis3, {actions: false})
+          vegaEmbed('#vis4-5', specVis4, {actions: false})
       } else if(EurBtn.checked) {
-          vegaEmbed('#vis3-4', specVis4, {actions: false})
+          vegaEmbed('#vis4-5', specVis5, {actions: false})
       }
     }
   </script>
