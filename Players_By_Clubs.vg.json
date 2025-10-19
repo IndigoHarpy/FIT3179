@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height":"container",
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Players_Clubs_Country.csv"
   },
