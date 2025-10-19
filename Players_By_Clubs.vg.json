@@ -79,8 +79,8 @@
         },
         "tooltip": [
           {"field": "Country", "type": "nominal"},
-          {"field": "Players", "type": "quantitative", "title":"Players", "format": ","},
-          {"field": "Clubs", "type": "quantitative", "title":"Professional Clubs", "format": ","},
+          {"field": "Players", "type": "quantitative", "format": ","},
+          {"field": "Clubs", "type": "quantitative", "format": ","},
           {
             "field": "Players (per 10,000 people)",
             "type": "quantitative",
@@ -91,6 +91,11 @@
     },
     {
       "mark": "circle",
+      "params": [{
+        "name": "continent_highlight",
+        "select": {"type": "point", "fields": ["Continent"]},
+        "bind": "legend"
+      }],
       "encoding": {
         "size": {
           "field": "Population",
@@ -124,7 +129,10 @@
             ]
           }
         },
-        "opacity": {"value": 0.6},
+        "opacity": {
+          "condition": {"param": "continent_highlight", "value": 0.6},
+          "value": 0.2
+        },
         "tooltip": [
           {"field": "Country", "type": "nominal"},
           {"field": "Players", "type": "quantitative", "title":"Players", "format": ","},
