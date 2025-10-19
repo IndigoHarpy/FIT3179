@@ -72,7 +72,7 @@
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['Country'] == 'Mexico' || datum['Country'] == 'Spain' || datum['Country'] == 'Japan' ||  datum['Country'] == 'Brazil'",
+            "test": "datum['Country'] == 'Mexico' || datum['Country'] == 'Spain' || datum['Country'] == 'Brazil'",
             "value": 1
           },
           "value": 0
