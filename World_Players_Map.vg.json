@@ -79,7 +79,7 @@
               "tooltip": [
                 {"field": "Country", "type": "nominal"},
                 {"field": "Domestic Players", "type": "quantitative", "format": ","},
-                {"field": "Domestic", "type": "quantitative", "title": "Percentage of Professional Players"}
+                {"field": "Domestic", "type": "quantitative", "title": "Percentage of Players (%)"}
             ]}
           }
         ]
@@ -129,7 +129,7 @@
               "tooltip": [
                 {"field": "Country", "type": "nominal"},
                 {"field": "Foreign Players", "type": "quantitative", "format": ","},
-                {"field": "Foreign", "type": "quantitative", "title": "Percentage of Professional Players"}
+                {"field": "Foreign", "type": "quantitative", "title": "Percentage of Players (%)"}
             ]}
           }
         ]
