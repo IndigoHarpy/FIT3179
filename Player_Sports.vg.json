@@ -4,7 +4,7 @@
         "repeat": ["Outdoor", "Outdoor_F"],
         "columns": 2,
         "spec":{
-            "width": 250,
+            "width": 225,
             "height": 150,
             "layer": [{
                 "data": {
@@ -93,7 +93,7 @@
         "repeat": ["Futsal", "Futsal_F"],
         "columns": 2,
         "spec":{
-            "width": 250,
+            "width": 225,
             "height": 150,
             "layer": [{
                 "data": {
@@ -186,7 +186,7 @@
         "repeat": ["Social", "Social_F"],
         "columns": 2,
         "spec":{
-            "width": 250,
+            "width": 225,
             "height": 150,
             "layer": [{
                 "data": {

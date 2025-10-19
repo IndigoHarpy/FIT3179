@@ -57,6 +57,38 @@
   },
   "layer": [
     {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 5,
+        "dy": -5,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Country'] == 'Mexico' || datum['Country'] == 'Spain' || datum['Country'] == 'Japan' ||  datum['Country'] == 'Brazil'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Players", "type": "quantitative", "title":"Professional Male Soccer Players", "format": ","},
+          {"field": "Clubs", "type": "quantitative", "title":"Professional Clubs", "format": ","},
+          {
+            "field": "Professional Soccer Players per 10,000 Population",
+            "type": "quantitative",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
       "mark": "circle",
       "encoding": {
         "size": {
@@ -92,37 +124,6 @@
           }
         },
         "opacity": {"value": 0.6},
-        "tooltip": [
-          {"field": "Country", "type": "nominal"},
-          {"field": "Players", "type": "quantitative", "title":"Professional Male Soccer Players", "format": ","},
-          {"field": "Clubs", "type": "quantitative", "title":"Professional Clubs", "format": ","},
-          {
-            "field": "Professional Soccer Players per 10,000 Population",
-            "type": "quantitative",
-            "format": ".2f"
-          }
-        ]
-      }
-    },
-    {
-      "mark": {
-        "type": "text",
-        "align": "right",
-        "baseline": "middle",
-        "dx": -12,
-        "fontSize": 11.5,
-        "fontStyle": "italic"
-      },
-      "encoding": {
-        "text": {"field": "Country", "type": "nominal"},
-        "color": {"value": "black"},
-        "opacity": {
-          "condition": {
-            "test": "datum['Country'] == 'Mexico' || datum['Country'] == 'United States' || datum['Country'] == 'Australia' || datum['Country'] == 'Spain' || datum['Country'] == 'Japan' ||  datum['Country'] == 'Brazil'",
-            "value": 1
-          },
-          "value": 0
-        },
         "tooltip": [
           {"field": "Country", "type": "nominal"},
           {"field": "Players", "type": "quantitative", "title":"Professional Male Soccer Players", "format": ","},
