@@ -1,89 +1,277 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "repeat": ["Outdoor", "Outdoor_F", "Futsal", "Futsal_F", "Social", "Social_F"],
-    "columns": 2,
-    "spec":{
-        "width": 250,
-        "height": 150,
-        "layer": [{
-            "data": {
-                "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_Soccer_Participation.csv"
-            },
-            "mark": "line",
-            "encoding": {
-                "x": {
-                "field": "Year",
-                "timeUnit": "year",
-                "title":"Year"
+    "vconcat": [{
+        "repeat": ["Outdoor", "Outdoor_F"],
+        "columns": 2,
+        "spec":{
+            "width": 250,
+            "height": 150,
+            "layer": [{
+                "data": {
+                    "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_Soccer_Participation.csv"
                 },
-                "y": {
-                "field": {"repeat": "repeat"},
-                "type": "quantitative",
-                "aggregate": "sum",
-                "title": "Number of Players"
-                },
-                "color": {
-                "field": "State",
-                "type": "nominal",
-                "scale": {
-                    "domain": [
-                    "Australian Capital Territory",
-                    "New South Wales",
-                    "Northern Territory",
-                    "Queensland",
-                    "South Australia",
-                    "Tasmania",
-                    "Victoria",
-                    "Western Australia"
-                    ],
-                    "range": [
-                    "#77aadd",
-                    "#99ddff",
-                    "#44bb99",
-                    "#bbcc33",
-                    "#aaaa00",
-                    "#eedd88",
-                    "#ee8866",
-                    "#ffaabb"
+                "mark": {"type": "area", "point": true},
+                "encoding": {
+                    "x": {
+                        "field": "Year",
+                        "timeUnit": "year",
+                        "axis": {"title": "Year", "tickCount": 10, "grid": false}
+                    },
+                        "y": {
+                        "field": {"repeat": "repeat"},
+                        "type": "quantitative",
+                        "aggregate": "sum",
+                        "title": "Number of Players",
+                        "scale": {"domain": [0, 500000]}
+                    },
+                        "color": {
+                        "field": "State",
+                        "type": "nominal",
+                        "scale": {
+                            "domain": [
+                                "Northern Territory",
+                                "Tasmania",
+                                "Australian Capital Territory",
+                                "South Australia",
+                                "Western Australia",
+                                "Queensland",
+                                "Victoria",
+                                "New South Wales"
+                                ],
+                                "range": [
+                                "#77aadd",
+                                "#99ddff",
+                                "#44bb99",
+                                "#bbcc33",
+                                "#aaaa00",
+                                "#eedd88",
+                                "#ee8866",
+                                "#ffaabb"
+                                ]
+                        },
+                        "legend":{"orient": "right"}         
+                    },
+                    "order": {"field": "State_order"},
+                    "tooltip": [
+                    {"field": "Year", "timeUnit": "year", "title": "Year"},
+                    {"field": "State", "type": "nominal"},
+                    {
+                        "field": {"repeat": "repeat"}, 
+                        "type": "quantitative", 
+                        "aggregate":"sum", 
+                        "title": "Number of Players", 
+                        "format": ","
+                    }
                     ]
-                },
-                "legend":{"orient": "bottom"}         
-                },
-                "tooltip": [
-                {"field": "Year", "timeUnit": "year", "title": "Year"},
-                {"field": "State", "type": "nominal"},
-                {
-                    "field": {"repeat": "repeat"}, 
-                    "type": "quantitative", 
-                    "aggregate":"sum", 
-                    "title": "Number of Players", 
-                    "format": ","
                 }
-                ]
-            }
-        },
-        {
-            "data": {
-                "values": [{
-                    "Outdoor": "Sport: Outdoor Soccer", 
-                    "Outdoor_F": "Sport: Women's Outdoor Soccer", 
-                    "Futsal": "Sport: Futsal", 
-                    "Futsal_F": "Sport: Women's Futsal", 
-                    "Social": "Sport: Social Soccer", 
-                    "Social_F": "Sport: Women's Social Soccer"
-                }]
             },
-            "mark": {
-                "type": "text",
-                "align": "right",
-                "baseline": "bottom",
-                "x": "width",
-                "y": 0
-            },
-            "encoding": {
-                "text": { "field": { "repeat": "repeat" } }
+            {
+                "data": {
+                    "values": [{
+                        "Outdoor": "Sport: Outdoor Soccer", 
+                        "Outdoor_F": "Sport: Women's Outdoor Soccer", 
+                        "Futsal": "Sport: Futsal", 
+                        "Futsal_F": "Sport: Women's Futsal", 
+                        "Social": "Sport: Social Soccer", 
+                        "Social_F": "Sport: Women's Social Soccer"
+                    }]
+                },
+                "mark": {
+                    "type": "text",
+                    "align": "right",
+                    "baseline": "bottom",
+                    "x": "width",
+                    "y": 0
+                },
+                "encoding": {
+                    "text": { "field": { "repeat": "repeat" } }
+                }
             }
+        ]
         }
-    ]
-    }
+    },
+    {
+        "repeat": ["Futsal", "Futsal_F"],
+        "columns": 2,
+        "spec":{
+            "width": 250,
+            "height": 150,
+            "layer": [{
+                "data": {
+                    "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_Soccer_Participation.csv"
+                },
+                "transform": [{
+                    "calculate": "if(datum.State === 'Victoria', 0, if(datum.State === 'Queensland', 1, if(datum.State === 'New South Wales', 2, if(datum.State === 'Australian Capital Territory', 3, if(datum.State === 'Tasmania', 4, if(datum.State === 'South Australia', 5, 6))))))",
+                    "as": "State_order"
+                }],
+                "mark": {"type": "area", "point": true},
+                "encoding": {
+                    "x": {
+                        "field": "Year",
+                        "timeUnit": "year",
+                        "axis": {"title": "Year", "tickCount": 10, "grid": false}
+                    },
+                        "y": {
+                        "field": {"repeat": "repeat"},
+                        "type": "quantitative",
+                        "aggregate": "sum",
+                        "title": "Number of Players",
+                        "scale": {"domain": [0, 55000]}
+                    },
+                        "color": {
+                        "field": "State",
+                        "type": "nominal",
+                        "scale": {
+                            "domain": [
+                                "Northern Territory",
+                                "Tasmania",
+                                "Australian Capital Territory",
+                                "South Australia",
+                                "Western Australia",
+                                "Queensland",
+                                "Victoria",
+                                "New South Wales"
+                                ],
+                                "range": [
+                                "#77aadd",
+                                "#99ddff",
+                                "#44bb99",
+                                "#bbcc33",
+                                "#aaaa00",
+                                "#eedd88",
+                                "#ee8866",
+                                "#ffaabb"
+                                ]
+                        },
+                        "legend":{"orient": "right"}         
+                    },
+                    "order": {"field": "State_order"},
+                    "tooltip": [
+                    {"field": "Year", "timeUnit": "year", "title": "Year"},
+                    {"field": "State", "type": "nominal"},
+                    {
+                        "field": {"repeat": "repeat"}, 
+                        "type": "quantitative", 
+                        "aggregate":"sum", 
+                        "title": "Number of Players", 
+                        "format": ","
+                    }
+                    ]
+                }
+            },
+            {
+                "data": {
+                    "values": [{
+                        "Outdoor": "Sport: Outdoor Soccer", 
+                        "Outdoor_F": "Sport: Women's Outdoor Soccer", 
+                        "Futsal": "Sport: Futsal", 
+                        "Futsal_F": "Sport: Women's Futsal", 
+                        "Social": "Sport: Social Soccer", 
+                        "Social_F": "Sport: Women's Social Soccer"
+                    }]
+                },
+                "mark": {
+                    "type": "text",
+                    "align": "right",
+                    "baseline": "bottom",
+                    "x": "width",
+                    "y": 0
+                },
+                "encoding": {
+                    "text": { "field": { "repeat": "repeat" } }
+                }
+            }
+        ]
+        }
+    }, 
+    {
+        "repeat": ["Social", "Social_F"],
+        "columns": 2,
+        "spec":{
+            "width": 250,
+            "height": 150,
+            "layer": [{
+                "data": {
+                    "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_Soccer_Participation.csv"
+                },
+                "mark": {"type": "area", "point": true},
+                "encoding": {
+                    "x": {
+                        "field": "Year",
+                        "timeUnit": "year",
+                        "axis": {"title": "Year", "tickCount": 10, "grid": false}
+                    },
+                        "y": {
+                        "field": {"repeat": "repeat"},
+                        "type": "quantitative",
+                        "aggregate": "sum",
+                        "title": "Number of Players",
+                        "scale": {"domain": [0, 120000]}
+                    },
+                        "color": {
+                        "field": "State",
+                        "type": "nominal",
+                        "scale": {
+                            "domain": [
+                                "Northern Territory",
+                                "Tasmania",
+                                "Australian Capital Territory",
+                                "South Australia",
+                                "Western Australia",
+                                "Queensland",
+                                "Victoria",
+                                "New South Wales"
+                                ],
+                                "range": [
+                                "#77aadd",
+                                "#99ddff",
+                                "#44bb99",
+                                "#bbcc33",
+                                "#aaaa00",
+                                "#eedd88",
+                                "#ee8866",
+                                "#ffaabb"
+                                ]
+                        },
+                        "legend":{"orient": "right"}         
+                    },
+                    "order": {"field": "State_order"},
+                    "tooltip": [
+                    {"field": "Year", "timeUnit": "year", "title": "Year"},
+                    {"field": "State", "type": "nominal"},
+                    {
+                        "field": {"repeat": "repeat"}, 
+                        "type": "quantitative", 
+                        "aggregate":"sum", 
+                        "title": "Number of Players", 
+                        "format": ","
+                    }
+                    ]
+                }
+            },
+            {
+                "data": {
+                    "values": [{
+                        "Outdoor": "Sport: Outdoor Soccer", 
+                        "Outdoor_F": "Sport: Women's Outdoor Soccer", 
+                        "Futsal": "Sport: Futsal", 
+                        "Futsal_F": "Sport: Women's Futsal", 
+                        "Social": "Sport: Social Soccer", 
+                        "Social_F": "Sport: Women's Social Soccer"
+                    }]
+                },
+                "mark": {
+                    "type": "text",
+                    "align": "right",
+                    "baseline": "bottom",
+                    "x": "width",
+                    "y": 0
+                },
+                "encoding": {
+                    "text": { "field": { "repeat": "repeat" } }
+                }
+            }
+        ]
+        }
+    }]
   }
