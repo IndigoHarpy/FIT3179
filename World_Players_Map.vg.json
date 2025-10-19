@@ -12,7 +12,7 @@
         "width": 500,
         "height": 300,
         "title": "Domestic Players",
-        "projection": {"type": "equalEarth"},
+        "projection": {"type": "equalEarth", "rotate": [-30, 0, 0]},
         "layer": [
           {
             "data": {
@@ -57,7 +57,7 @@
         "width": 500,
         "height": 300,
         "title": "Foreign Players",
-        "projection": {"type": "equalEarth"},
+        "projection": {"type": "equalEarth", "rotate": [-30, 0, 0]},
         "layer": [
           {
             "data": {
