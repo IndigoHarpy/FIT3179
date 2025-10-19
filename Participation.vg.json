@@ -37,7 +37,7 @@
         "x": {
           "field": "Year",
           "timeUnit": "year",
-          "title":"Year"
+          "axis": {"title": "Year", "tickCount": 10, "grid": false}
         },
         "y": {
           "field": "Participants",
@@ -60,7 +60,7 @@
               "#ff7f00"
             ]
           },
-          "legend":{"orient": "bottom"}         
+          "legend":{"orient": "right"}         
         },
         "tooltip": [
           {"field": "Year", "timeUnit": "year", "title": "Year"},
@@ -112,7 +112,7 @@
       }
     }
   ]}, {
-    "width": 400,
+    "width": "container",
     "data": {
         "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_Soccer_Participation.csv"
     },
