@@ -112,7 +112,7 @@
       }
     }
   ]}, {
-    "width": "container",
+    "width": 400,
     "data": {
         "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_Soccer_Participation.csv"
     },
