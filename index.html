@@ -35,28 +35,29 @@
 
     <!-- pure grid group -->
     <div class="pure-g">
-      <div class="pure-u-1-3 central" style="border-left: 1px solid; box-sizing: border-box;">
-        <div class="body_text" id="body_text1">
+      <div class="pure-u-1-3 central">
+        <div class="body_text" id="body_text2">
           <h1 style="text-align: center;">Participation</h1>
 
           <p>text text text text text text text text text text text text text text text text 
             text text text text text text text text text text text text text text text text 
             text text text text text text text text text text text text text text text text 
           </p>
+        </div>
       </div>
-      <div class="pure-u-2-3 central">
-        <div id="vis1" class="vis-container" style="width: 95%; box-sizing: border-box;"></div>
+      <div class="pure-u-2-3 central" style="border-left: 1px solid; box-sizing: border-box;">
+        <div id="vis1" class="vis-container" style="width: 95%; padding-left: 5px;"></div>
       </div>
     </div>
     <!-- end pure grid group -->
 
     <!-- pure grid group -->
     <div class="pure-g">
-      <div class="pure-u-1-2">
-        <body> text </body>
+      <div class="pure-u-2-3">
+        <div id="vis2" class="vis-container"></div>
       </div>
-      <div class="pure-u-1-2">
-        <div id="vis4" class="vis-container"></div>
+      <div class="pure-u-1-3">
+        <body> text </body>
       </div>
     </div>
     <!-- end pure grid group -->
@@ -88,7 +89,6 @@
     const worldBtn = document.getElementById("World");
     const EurBtn = document.getElementById("Europe");
     var specVis1 = "./Participation_Map.vg.json";
-    var specVis2 = "./Participation_Map_F.vg.json";
     var specVis = "./Participation_Over_Time.vg.json";
     var specVis = "./World_Players_Map.vg.json";
     var specVis = "./Europe_Players_Map.vg.json";
