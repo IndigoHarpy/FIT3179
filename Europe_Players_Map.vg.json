@@ -37,9 +37,10 @@
               "longitude": {"field": "longitude", "type": "quantitative"},
               "latitude": {"field": "latitude", "type": "quantitative"},
               "size": {
-                "field": "Domestic Players",
+                "field": "Domestic",
                 "type": "quantitative",
-                "title": "Number of Players"
+                "title": "Players (%)",
+                "scale": {"rangeMax": 150}
               },
               "tooltip": [
                 {"field": "Country", "type": "nominal"},
@@ -78,9 +79,10 @@
               "longitude": {"field": "longitude", "type": "quantitative"},
               "latitude": {"field": "latitude", "type": "quantitative"},
               "size": {
-                "field": "Foreign Players",
+                "field": "Foreign",
                 "type": "quantitative",
-                "title": "Number of Players"
+                "title": "Players (%)",
+                "scale": {"rangeMax": 150}
               },
               "tooltip": [
                 {"field": "Country", "type": "nominal"},

@@ -120,17 +120,17 @@
               "Oceania"
             ],
             "range": [
+              "#cc79a7",
               "#e41a1c",
               "#ff7f00",
               "#efc100",
-              "#a6cee3",
               "#377eb8",
-              "#000080"
+              "#00316e"
             ]
           }
         },
         "opacity": {
-          "condition": {"param": "continent_highlight", "value": 0.6},
+          "condition": {"param": "continent_highlight", "value": 0.8},
           "value": 0.2
         },
         "tooltip": [

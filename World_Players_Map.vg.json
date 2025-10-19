@@ -7,12 +7,42 @@
         }
       }
     },
+    "params": [{
+      "name": "zoom_level",
+      "value": 90,
+      "bind": {
+        "input": "range",
+        "min": 90,
+        "max": 500,
+        "step": 10,
+        "name": "Zoom: "
+        }
+      },
+      {
+        "name": "rotate_to",
+        "value": [-20, 0, 0],
+        "bind": {
+          "input": "select",
+          "options": [
+            [-20, 0, 0],
+            [90, 0, 0]
+          ],
+          "labels": ["Europe", "North America"],
+          "name": "Map Centre: "
+        }
+      }
+    ],
     "vconcat": [
       {
         "width": 500,
         "height": 300,
         "title": "Domestic Players",
-        "projection": {"type": "equalEarth", "rotate": [-30, 0, 0]},
+        "projection": {
+          "type": "equalEarth", 
+          "rotate": {"expr": "rotate_to"},
+          "center": [0, 90],
+          "scale": {"expr": "zoom_level"}
+        },
         "layer": [
           {
             "data": {
@@ -43,7 +73,8 @@
               "size": {
                 "field": "Domestic",
                 "type": "quantitative",
-                "title": "Players (%)"
+                "title": "Players (%)",
+                "scale": {"rangeMax": 150}
               },
               "tooltip": [
                 {"field": "Country", "type": "nominal"},
@@ -57,7 +88,11 @@
         "width": 500,
         "height": 300,
         "title": "Foreign Players",
-        "projection": {"type": "equalEarth", "rotate": [-30, 0, 0]},
+        "projection": {
+          "type": "equalEarth", 
+          "rotate": {"expr": "rotate_to"},
+          "center": [0, 90],
+          "scale": {"expr": "zoom_level"}},
         "layer": [
           {
             "data": {
