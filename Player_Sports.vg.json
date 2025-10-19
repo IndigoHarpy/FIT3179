@@ -48,8 +48,7 @@
                                 "#ee8866",
                                 "#ffaabb"
                                 ]
-                        },
-                        "legend":{"orient": "right"}         
+                        }     
                     },
                     "order": {"field": "State_order"},
                     "tooltip": [
@@ -142,8 +141,7 @@
                                 "#ee8866",
                                 "#ffaabb"
                                 ]
-                        },
-                        "legend":{"orient": "right"}         
+                        }  
                     },
                     "order": {"field": "State_order"},
                     "tooltip": [
@@ -233,7 +231,7 @@
                                 "#ffaabb"
                                 ]
                         },
-                        "legend":{"orient": "right"}         
+                        "legend":{"orient": "bottom", "direction":"vertical", "columns": 4}         
                     },
                     "order": {"field": "State_order"},
                     "tooltip": [
