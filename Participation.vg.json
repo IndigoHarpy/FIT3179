@@ -23,8 +23,8 @@
   "vconcat": [{"data": {
     "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Sex_Participation.csv"
   },
-  "width": 500,
-  "height": 300,
+  "width": 400,
+  "height": 200,
   "transform": [
     {
       "filter": {"param": "click"}
@@ -112,7 +112,7 @@
       }
     }
   ]}, {
-    "width": 500,
+    "width": 400,
     "data": {
         "url": "https://raw.githubusercontent.com/IndigoHarpy/FIT3179/main/Australia_Soccer_Participation.csv"
     },
