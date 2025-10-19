@@ -39,7 +39,7 @@
     },
     {
       "calculate": "datum.Players/datum.Population * 10000",
-      "as": "Professional Soccer Players per 10,000 Population"
+      "as": "Players (per 10,000 people)"
     }
   ],
   "encoding": {
@@ -78,10 +78,10 @@
         },
         "tooltip": [
           {"field": "Country", "type": "nominal"},
-          {"field": "Players", "type": "quantitative", "title":"Professional Male Soccer Players", "format": ","},
+          {"field": "Players", "type": "quantitative", "title":"Players", "format": ","},
           {"field": "Clubs", "type": "quantitative", "title":"Professional Clubs", "format": ","},
           {
-            "field": "Professional Soccer Players per 10,000 Population",
+            "field": "Players (per 10,000 people)",
             "type": "quantitative",
             "format": ".2f"
           }
@@ -126,10 +126,10 @@
         "opacity": {"value": 0.6},
         "tooltip": [
           {"field": "Country", "type": "nominal"},
-          {"field": "Players", "type": "quantitative", "title":"Professional Male Soccer Players", "format": ","},
-          {"field": "Clubs", "type": "quantitative", "title":"Professional Clubs", "format": ","},
+          {"field": "Players", "type": "quantitative", "title":"Players", "format": ","},
+          {"field": "Clubs", "type": "quantitative", "title":"Clubs", "format": ","},
           {
-            "field": "Professional Soccer Players per 10,000 Population",
+            "field": "Players (per 10,000 people)",
             "type": "quantitative",
             "format": ".2f"
           }
