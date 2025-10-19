@@ -39,14 +39,14 @@
                                 "New South Wales"
                                 ],
                                 "range": [
-                                "#77aadd",
-                                "#99ddff",
-                                "#44bb99",
-                                "#bbcc33",
-                                "#aaaa00",
-                                "#eedd88",
-                                "#ee8866",
-                                "#ffaabb"
+                                "#0072B2",
+                                "#117733",
+                                "#44AA99",
+                                "#88CCEE",
+                                "#DDCC77",
+                                "#CC6677",
+                                "#AA4499",
+                                "#882255"
                                 ]
                         }     
                     },
@@ -132,14 +132,14 @@
                                 "New South Wales"
                                 ],
                                 "range": [
-                                "#77aadd",
-                                "#99ddff",
-                                "#44bb99",
-                                "#bbcc33",
-                                "#aaaa00",
-                                "#eedd88",
-                                "#ee8866",
-                                "#ffaabb"
+                                "#0072B2",
+                                "#117733",
+                                "#44AA99",
+                                "#88CCEE",
+                                "#DDCC77",
+                                "#CC6677",
+                                "#AA4499",
+                                "#882255"
                                 ]
                         }  
                     },
@@ -221,14 +221,14 @@
                                 "New South Wales"
                                 ],
                                 "range": [
-                                "#77aadd",
-                                "#99ddff",
-                                "#44bb99",
-                                "#bbcc33",
-                                "#aaaa00",
-                                "#eedd88",
-                                "#ee8866",
-                                "#ffaabb"
+                                "#332288",
+                                "#117733",
+                                "#44AA99",
+                                "#88CCEE",
+                                "#DDCC77",
+                                "#CC6677",
+                                "#AA4499",
+                                "#882255"
                                 ]
                         },
                         "legend":{"orient": "bottom", "direction":"vertical", "columns": 4}         

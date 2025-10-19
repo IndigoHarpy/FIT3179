@@ -64,7 +64,7 @@
         },
         "tooltip": [
           {"field": "Year", "timeUnit": "year", "title": "Year"},
-          {"field": "Sex", "type": "ordinal", "title": "Soccer Player Sex"},
+          {"field": "Sex", "type": "ordinal", "title": "Sex"},
           {
             "field": "Participants", 
             "type": "quantitative", 
