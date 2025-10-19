@@ -35,7 +35,7 @@
     "vconcat": [
       {
         "width": 500,
-        "height": 250,
+        "height": 200,
         "title": "Domestic Players",
         "projection": {
           "type": "equalEarth", 
@@ -86,7 +86,7 @@
       },
       {
         "width": 500,
-        "height": 250,
+        "height": 200,
         "title": "Foreign Players",
         "projection": {
           "type": "equalEarth", 
